@@ -118,7 +118,6 @@ stargazer(did_model3, type="latex", # type = "text" shows a preview
           #covariate.labels=c("Change in profit margin"))
 
 
-## This is what interests you ---------------------------------------
 # Estimate via fixed effects (see https://en.wikipedia.org/wiki/Fixed_effects_model)
 # the main idea is that if there are omitted variables that are invariant across time, to avoid omitted variable bias, 
 # we can demean the data and run the usual regression. Since the omitted variables are invariant, 
@@ -128,7 +127,6 @@ did.reg <- plm(margin ~ pre_post + treated + pre_post:treated, data = panel, mod
 coeftest(did.reg, vcov = function(x) # obtain clustered standard errors
   vcovHC(x, cluster = "group", type = "HC1"))
 
-# This is what really interests you --------------------------
 # Estimate via fixed effects without outliers
 panel_no_out <- pdata.frame(data_no_outlier, "name") # declare as panel data
 did.reg2 <- plm(margin ~ pre_post + treated + pre_post:treated, data = panel_no_out, model = "within") # within model
