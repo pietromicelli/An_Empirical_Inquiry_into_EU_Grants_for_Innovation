@@ -21,12 +21,12 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 ## 1) IMPORT DATA =========================================================================
 
 # NEW Method: Successful companies - This is the new way to import successful companies thorugh
-# the file "0917_SuccApps_EUGrants.xlsx"
+# the file "Successful_Applicants.xlsx"
 sheets = c("DE_Marg", "IT_Marg", "FR_Marg", "ES_Marg")
 successfull = list()
 for (i in 1:length(sheets)){
   # Read the excel sheets of the file with the companies successfull
-  successfull[[i]] <- read_excel("0917_SuccApps_EUGrants.xlsx", sheet = sheets[i])
+  successfull[[i]] <- read_excel("Successful_Applicants.xlsx", sheet = sheets[i])
   name_cols <- c("name", "margin_post", "margin_pre")
   # Change the name of the columns
   colnames(successfull[[i]]) <- name_cols
@@ -50,7 +50,7 @@ sheets = c("Comp_DE", "Comp_IT", "Comp_ES", "Comp_FR")
 control = list()
 for (i in 1:length(sheets)){
   # Read the excel sheets of the file with the companies successfull
-  control[[i]] <- read_excel("ORBIS Control Group.xlsx", sheet = sheets[i])
+  control[[i]] <- read_excel("Control_Group.xlsx", sheet = sheets[i])
   name_cols <- c("name", "prod_post", "prod_pre","margin_post", "margin_pre")
   # Change the name of the columns
   colnames(control[[i]]) <- name_cols
