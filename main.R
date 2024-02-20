@@ -238,9 +238,9 @@ legend("bottom",
        )
 
 ## 4) OPTIONAL. ================================================================
-# This is to merge the information from organization.xksx file with the information on the companies winning the grant
+# This is to merge the information from organizations.xlsx file with the information on the companies winning the grant
 # Not necessary to run the diff in diff.
-orgaz <- read_excel("organization.xlsx")
+orgaz <- read_excel("organizations.xlsx")
 df_orgaz <- orgaz %>% 
   dplyr::select(name, netEcContribution)
 df_orgaz$netEcContribution = as.numeric(df_orgaz$netEcContribution) 
@@ -250,7 +250,7 @@ df_orgaz = df_orgaz %>%
             projects_num = length(netEcContribution))%>%
   ungroup()
 
-# Merge organization with successfull
+# Merge organizations with successfull
 succ_org = merge(succ_df, df_orgaz, by.x = c("name"), by.y = c("name"))
 
 ## 5) OLD Method NOT TO RUN ---------------------------------------------------
