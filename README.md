@@ -16,7 +16,7 @@ This repository contains the research materials, datasets, code, and documentati
 ## Contributors
 
 - [Pietro Micelli](https://github.com/pietromicelli): Thesis author and primary contributor.
-- [Professor L. Bonacorsi]: Professor supervising the Thesis and Research activity. 
+- Professor L. Bonacorsi: Professor supervising the Thesis and Research activity. 
 
 ## License
 
